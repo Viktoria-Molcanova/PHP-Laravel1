@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FormProcessor;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/userform', [FormProcessor::class, 'index']);
-Route::post('/store_form', [FormProcessor::class, 'store']);
+Route::get('/', [EmployeeController::class, 'index']);
+Route::post('/store-form', [EmployeeController::class, 'store']);
+Route::put('/update-employee/{id}', [EmployeeController::class, 'update']);
